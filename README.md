@@ -1,2 +1,46 @@
 # docker-django
 A dockerfile to run django
+
+## Why
+The [official docker image for django](https://hub.docker.com/_/django/) is deprecated since 31 Dec 2016. Even those did not seem development friendly since generated images with a copied version of the project instead of a mounted project.
+
+## How to install
+
+1. Install docker ;-)
+2. Clone repository:
+```shell
+https://github.com/malcata/docker-django.git
+```
+3. Configure required environment variables, eventually on a bash_profile file:
+```shell
+$ export SOURCE_DIR="<project source folder>"
+```
+4. Edit settings.py with your IP:
+````shell
+ALLOWED_HOSTS = ['x.x.x.x']
+```
+
+## Usage
+
+1. Generate the docker image
+```shell
+$ make build
+```
+2. Run the container
+```shell
+$ make run
+```
+3. Use browser to access django http://container-ip:8000
+
+Check the [Makefile](Makefile) for further details.
+
+
+## Contributing
+
+Please follow the Github flow process (branch, commits and pull request)...
+
+
+## License
+
+The code in this repository, unless otherwise noted, is MIT licensed. See the `LICENSE` file in this repository.
+
