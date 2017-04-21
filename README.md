@@ -2,7 +2,7 @@
 A dockerfile to run django
 
 ## Why
-The [official docker image for django](https://hub.docker.com/_/django/) is deprecated since 31 Dec 2016. Even those did not seem development friendly since generated images with a copied version of the project instead of a mounted project.
+The [official docker image for django](https://hub.docker.com/_/django/) is deprecated since 31 Dec 2016. Even that did not seem development friendly, since it generated images with a copied version of the project instead of a mounted project folder.
 
 ## How to install
 
@@ -16,7 +16,7 @@ https://github.com/malcata/docker-django.git
 $ export SOURCE_DIR="<project source folder>"
 ```
 4. Edit settings.py with your IP:
-````shell
+```shell
 ALLOWED_HOSTS = ['x.x.x.x']
 ```
 
