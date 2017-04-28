@@ -15,10 +15,6 @@ https://github.com/malcata/docker-django.git
 ```shell
 $ export SOURCE_DIR="<project source folder>"
 ```
-4. Edit settings.py with your IP:
-```shell
-ALLOWED_HOSTS = ['x.x.x.x']
-```
 
 ## Usage
 
@@ -26,11 +22,15 @@ ALLOWED_HOSTS = ['x.x.x.x']
 ```shell
 $ make build
 ```
-2. Run the container
+2. (optional) First time to create the django project
+```shell
+$ make startproject
+```
+3. Run the container
 ```shell
 $ make run
 ```
-3. Use browser to access django http://container-ip:8000
+3. Use browser to access django http://localhost:8000
 
 Check the [Makefile](Makefile) for further details.
 
@@ -43,4 +43,5 @@ Please follow the Github flow process (branch, commits and pull request)...
 ## License
 
 The code in this repository, unless otherwise noted, is MIT licensed. See the ['LICENSE'](LICENSE) file in this repository.
+
 

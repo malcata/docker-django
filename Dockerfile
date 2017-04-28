@@ -29,4 +29,4 @@ RUN apt-get update \
 ## At run time mount the code folder
 
 EXPOSE 8000
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python","manage.py", "runserver", "0.0.0.0:8000"]
