@@ -22,15 +22,23 @@ $ export SOURCE_DIR="<project source folder>"
 ```shell
 $ make build
 ```
-2. (optional) First time to create the django project
+2. Add to the environment the following variables (.bash_profile or .bashrc):
+```shell
+export SOURCE_DIR?=~/source/project
+# ONLY NEEDED FOR NEW PROJECTS
+export PROJECT_NAME?=newproject
+export DJANGO_SECRET_KEY?=pleasereplacethis
+```
+
+3. (optional) First time to create the django project
 ```shell
 $ make startproject
 ```
-3. Run the container
+4. Run the container
 ```shell
 $ make run
 ```
-3. Use browser to access django http://localhost:8000
+5. Use browser to access django http://localhost:8000
 
 Check the [Makefile](Makefile) for further details.
 
