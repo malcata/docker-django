@@ -11,42 +11,34 @@ The [official docker image for django](https://hub.docker.com/_/django/) is depr
 ```shell
 https://github.com/malcata/docker-django.git
 ```
-3. Configure required environment variables, eventually on a bash_profile file:
+
+## Create a new project (only once per project)
+
+2. Start a new project
 ```shell
-$ export SOURCE_DIR="<project source folder>"
+$ docker compose run web django-admin startproject hello_world .
+```
+
+## Configure the DB /Load Migrations
+
+3. Import / Update the Database
+```shell
+$ docker compose run web /code/manage.py migrate
 ```
 
 ## Usage
 
-1. Generate the docker image
-```shell
-$ make build
-```
-2. Add to the environment the following variables (.bash_profile or .bashrc):
-```shell
-export SOURCE_DIR?=~/source/project
-# ONLY NEEDED FOR NEW PROJECTS
-export PROJECT_NAME?=newproject
-export DJANGO_SECRET_KEY?=pleasereplacethis
-```
-
-3. (optional) First time to create the django project
-```shell
-$ make startproject
-```
 4. Run the container
 ```shell
-$ make run
+$ docker compose up
 ```
-5. Use browser to access django http://localhost:8000
 
-Check the [Makefile](Makefile) for further details.
+5. Use browser to access django http://localhost:8000
 
 
 ## Contributing
 
 Please follow the Github flow process (branch, commits and pull request)...
-
 
 ## License
 
