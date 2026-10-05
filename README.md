@@ -13,12 +13,12 @@ The [official docker image for django](https://hub.docker.com/_/django/) is depr
 https://github.com/malcata/docker-django.git
 ```
 
-## Create a new project (only once per project)
+## Create a new project (only once)
 
-To start a new project, use django-admin to create a project named hello_world.
+To start a new project, use django-admin to create a project named experiment.
 
 ```shell
-$ docker compose run django django-admin startproject hello_world .
+$ docker compose run django django-admin startproject experiment .
 ```
 
 ## Usage
@@ -32,6 +32,15 @@ $ docker compose up
 Use a browser to access django http://localhost:8000
 
 
+## Create a new app (one per app)
+
+To start a new app, use manage.py to create an app named hello_world.
+
+```shell
+$ docker compose run django manage startapp hello_world
+```
+
+
 
 ## Configure the DB /Load Migrations
 
@@ -40,7 +49,6 @@ To run the database migrations:
 ```shell
 $ docker compose run django /code/manage.py migrate
 ```
-
 
 ## Contributing
 
