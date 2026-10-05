@@ -7,33 +7,39 @@ The [official docker image for django](https://hub.docker.com/_/django/) is depr
 ## How to install
 
 1. Install docker ;-)
-2. Clone repository:
+
+2. Clone the repository:
 ```shell
 https://github.com/malcata/docker-django.git
 ```
 
 ## Create a new project (only once per project)
 
-2. Start a new project
-```shell
-$ docker compose run web django-admin startproject hello_world .
-```
+To start a new project, use django-admin to create a project named hello_world.
 
-## Configure the DB /Load Migrations
-
-3. Import / Update the Database
 ```shell
-$ docker compose run web /code/manage.py migrate
+$ docker compose run django django-admin startproject hello_world .
 ```
 
 ## Usage
 
-4. Run the container
+To Launch Django with docker compose:
+
 ```shell
 $ docker compose up
 ```
 
-5. Use browser to access django http://localhost:8000
+Use a browser to access django http://localhost:8000
+
+
+
+## Configure the DB /Load Migrations
+
+To run the database migrations:
+
+```shell
+$ docker compose run django /code/manage.py migrate
+```
 
 
 ## Contributing
@@ -43,5 +49,3 @@ Please follow the Github flow process (branch, commits and pull request)...
 ## License
 
 The code in this repository, unless otherwise noted, is MIT licensed. See the ['LICENSE'](LICENSE) file in this repository.
-
-
